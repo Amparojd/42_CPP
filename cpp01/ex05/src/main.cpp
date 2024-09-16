@@ -6,22 +6,28 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 13:25:08 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/01 13:28:05 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:43:27 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main() {
-    Harl harl;
+int	main(void)
+{
+	std::string input;
+  Harl        harl;
 
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
-
-    return 0;
+  do
+  {
+      std::cout << "Enter a level: DEBUG, INFO, WARNING or ERROR. To exit, EXIT" << std::endl;
+      std::cin >> input;
+	if (std::cin.eof())
+        break;
+      harl.complain(input);
+  } while (input.compare("EXIT"));
+	return 0;
 }
+
 
 /*El ejercicio consiste en crear 
 una clase llamada Harl que simule

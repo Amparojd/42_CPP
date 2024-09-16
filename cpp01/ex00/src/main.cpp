@@ -6,13 +6,13 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 20:01:57 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/12 20:14:39 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:58:04 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() {
+/*int main() {
     std::cout << "----------HEAP----------" << std::endl;
     Zombie* heapZombie = newZombie("HeapZombie");
     heapZombie->announce();
@@ -23,7 +23,7 @@ int main() {
     randomChump("StackZombie");
     std::cout << std::endl;
     return 0;
-}
+}*/
 
 /*int main() {
     std::cout << "----------HEAP----------" << std::endl;
@@ -39,7 +39,7 @@ int main() {
     return 0;
 }*/
 
-/*int main()
+int main()
 {
     std::cout << "---------STACK----------" << std::endl;
     Zombie* invalidStackZombiePtr = NULL;
@@ -53,4 +53,4 @@ int main() {
     std::cout << "Trying to use a zombie after it goes out of scope (undefined behavior):" << std::endl;
     invalidStackZombiePtr->announce(); // Comportamiento indefinido: el objeto ya no existe
     std::cout << std::endl;
-}*/
+}

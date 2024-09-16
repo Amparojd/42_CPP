@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 13:31:50 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/12 21:06:11 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:50:38 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <log level>" << std::endl;
+        std::cerr << RED << "Usage: " << argv[0] << " DEBUG, INFO, WARNING OR ERROR" << RESET << std::endl;
         return 1;
     }
 

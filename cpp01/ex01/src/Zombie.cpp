@@ -6,13 +6,13 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 20:24:21 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/12 20:15:56 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/15 18:57:50 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() : name("") {
+Zombie::Zombie() {
     // Constructor por defecto
 }
 
