@@ -6,13 +6,11 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 11:26:53 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 11:27:31 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:52:37 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Fixed.hpp"
-#include <cmath>  // Para roundf
 
 // Constructor por defecto
 Fixed::Fixed() : _fixedPointValue(0) {}
@@ -21,7 +19,7 @@ Fixed::Fixed() : _fixedPointValue(0) {}
 Fixed::Fixed(const int intValue) : _fixedPointValue(intValue << _fractionalBits) {}
 
 // Constructor para flotantes
-Fixed::Fixed(const float floatValue) : _fixedPointValue(static_cast<int>(roundf(floatValue * (1 << _fractionalBits)))) {}
+Fixed::Fixed(const float floatValue) : _fixedPointValue(static_cast<int>(floatValue * (1 << _fractionalBits) + (floatValue >= 0 ? 0.5f : -0.5f))) {}
 
 // Constructor de copia
 Fixed::Fixed(const Fixed &other) : _fixedPointValue(other._fixedPointValue) {}
@@ -147,8 +145,14 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
     return (a > b) ? a : b;
 }
 
-// Sobrecarga del operador de inserción <<
-std::ostream &operator<<(std::ostream &os, const Fixed &fixed) {
-    os << fixed.toFloat();
+// Método de impresión
+void Fixed::print(std::ostream &os) const {
+    os << this->toFloat();
+}
+
+// Sobrecarga del operador de inserción
+std::ostream& operator<<(std::ostream &os, const Fixed &fixed) {
+    fixed.print(os);
     return os;
 }
+

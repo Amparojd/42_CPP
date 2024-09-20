@@ -6,13 +6,12 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 11:22:03 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 11:22:27 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/20 21:11:21 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Fixed.hpp"
-#include <cmath>  // Para roundf
+#include <iostream>
 
 // Constructor por defecto
 Fixed::Fixed() : _fixedPointValue(0) {
@@ -25,7 +24,7 @@ Fixed::Fixed(const int intValue) : _fixedPointValue(intValue << _fractionalBits)
 }
 
 // Constructor para flotantes
-Fixed::Fixed(const float floatValue) : _fixedPointValue(static_cast<int>(roundf(floatValue * (1 << _fractionalBits)))) {
+Fixed::Fixed(const float floatValue) : _fixedPointValue(myRound(floatValue * (1 << _fractionalBits))) {
     std::cout << "Float constructor called" << std::endl;
 }
 
@@ -63,15 +62,16 @@ float Fixed::toFloat(void) const {
     return static_cast<float>(_fixedPointValue) / (1 << _fractionalBits);
 }
 
-// Convertir a entero
 int Fixed::toInt(void) const {
-    return _fixedPointValue >> _fractionalBits;
+    return myRound(this->toFloat());
 }
 
-// Sobrecarga del operador de inserción <<
-std::ostream &operator<<(std::ostream &os, const Fixed &fixed) {
-    os << fixed.toFloat();
-    return os;
+// Método para imprimir
+void Fixed::print(std::ostream &os) const {
+    os << this->toFloat();
 }
 
-
+// Función de redondeo
+int Fixed::myRound(float value) const {
+    return static_cast<int>(value >= 0 ? value + 0.5f : value - 0.5f);
+}

@@ -6,12 +6,12 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:40:20 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:43:02 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/15 18:56:38 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-#include <cstring> // For memcpy
+#include <cstring>
 #include <iostream>
 
 Brain::Brain() {

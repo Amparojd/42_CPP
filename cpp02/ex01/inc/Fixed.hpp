@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 11:21:33 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 11:21:49 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:49:25 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ public:
     float toFloat(void) const;  // Convertir a flotante
     int toInt(void) const;  // Convertir a entero
 
-    // Sobrecarga del operador de inserción <<
-    friend std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
+    void print(std::ostream &os) const;  // Método para imprimir
+
+private:
+    int myRound(float value) const;  // Función de redondeo
 };
 
 #endif

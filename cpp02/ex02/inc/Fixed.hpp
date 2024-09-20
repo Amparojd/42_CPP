@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 11:26:11 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 11:26:20 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:52:25 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,11 @@ public:
     static Fixed& max(Fixed &a, Fixed &b);
     static const Fixed& max(const Fixed &a, const Fixed &b);
 
-    // Sobrecarga del operador de inserción <<
-    friend std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
+    // Método para imprimir
+    void print(std::ostream &os) const;  // Método de impresión
 };
+
+// Sobrecarga del operador de inserción
+std::ostream& operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif
