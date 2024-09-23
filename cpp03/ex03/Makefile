@@ -6,7 +6,7 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/09/15 12:24:41 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/09/23 10:46:52 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ DEPS = $(INCS_DIR)/
 
 # Compilation Settings
 CC		= c++
-FLAGS = -std=c++98 -Wall -Wextra -Werror $(INCLUDE) -g -fsanitize=address
+FLAGS = -std=c++98 -Wall -Wextra -Werror $(INCLUDE) -g -fsanitize=address -Wshadow -Wno-shadow
 
 # Utils
 RM		= rm -rf
@@ -66,7 +66,7 @@ $(NAME): $(OBJS)
 define title
 	@echo 
 	@echo "$(GREEN)*****************************$(RESET)"
-	@echo "$(GREEN)*     $(BOLD) Serena, my love!     *$(RESET)"
+	@echo "$(GREEN)*  $(BOLD)🥴 Now it’s weird!  🥴   *$(RESET)"
 	@echo "$(GREEN)*****************************$(RESET)"
 endef
 

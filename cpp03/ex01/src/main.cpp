@@ -6,26 +6,29 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:10:12 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:10:14 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/23 09:33:39 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main() {
-    // Crear ClapTrap
-    ClapTrap claptrap("CLTP");
-    claptrap.attack("target1");
-    claptrap.takeDamage(5);
-    claptrap.beRepaired(3);
+    std::cout << std::endl;
+    ScavTrap *Player1 = new ScavTrap("Player1");
+    std::cout << std::endl;
+    ScavTrap *Player2 = new ScavTrap("Player2");
 
-    // Crear ScavTrap
-    ScavTrap scavtrap("SCVT");
-    scavtrap.attack("target2");
-    scavtrap.takeDamage(10);
-    scavtrap.beRepaired(20);
-    scavtrap.guardGate();
+    std::cout << std::endl;
+    Player1->attack("Player2");
+    Player2->takeDamage(20);
+    Player2->beRepaired(5);
+    
+    Player1->guardGate();
+
+    std::cout << std::endl;
+    delete Player1;
+    delete Player2;
 
     return 0;
 }
+

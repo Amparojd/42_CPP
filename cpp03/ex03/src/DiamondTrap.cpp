@@ -6,29 +6,44 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:25:51 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:25:53 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/23 11:07:01 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include <iostream>
 
-DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) {
-    std::cout << "DiamondTrap " << name << " constructed." << std::endl;
-    
-    // Use ClapTrap's members with explicit qualification
-    ClapTrap::_hitPoints = FragTrap::getHitPoints();  // Asume getHitPoints() es un método accesible
-    ClapTrap::_energyPoints = ScavTrap::getEnergyPoints();  // Asume getEnergyPoints() es un método accesible
-    ClapTrap::_attackDamage = FragTrap::getAttackDamage();  // Asume getAttackDamage() es un método accesible
+// Constructor
+DiamondTrap::DiamondTrap() {}
+
+DiamondTrap::DiamondTrap(std::string name) 
+    : ClapTrap(name + "_name"), FragTrap(name), ScavTrap(name), _name(name) {
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 30;
+    std::cout << GREEN << "DiamondTrap " << _name << " constructed!" << RESET << std::endl;
 }
 
+// Constructor de copia
+DiamondTrap::DiamondTrap(const DiamondTrap &other) 
+    : ClapTrap(other), FragTrap(other), ScavTrap(other), _name(other._name) {
+    std::cout << YELLOW << "DiamondTrap copy constructor called!" << RESET << std::endl;
+}
+
+// Operador de asignación
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+        _name = other._name;
+    }
+    return *this;
+}
+
+// Destructor
 DiamondTrap::~DiamondTrap() {
-    std::cout << "DiamondTrap destroyed." << std::endl;
+    std::cout << PURPLE << "DiamondTrap " << _name << " destructed!" << RESET << std::endl;
 }
 
+// Función especial
 void DiamondTrap::whoAmI() {
-    std::cout << "I am " << this->name << " and my ClapTrap name is " << ClapTrap::name << "!" << std::endl;
+    std::cout << PURPLE << BOLD << " Hi! ✌️ I am " << _name << " and my ClapTrap name is " << ClapTrap::_name << RESET << std::endl;
 }

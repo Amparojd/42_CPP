@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:15:47 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:15:52 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/23 10:56:11 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
+protected:
+    FragTrap();
 public:
-    // Constructor que inicializa los atributos
-    FragTrap(const std::string& name);
+    FragTrap(std::string name);
+    FragTrap(const FragTrap &other);
+    FragTrap &operator=(const FragTrap &other);
+    ~FragTrap();
 
-    // Destructor
-    virtual ~FragTrap();
-
-    // Método específico de FragTrap
-    void highFivesGuys();
+    void attack(const std::string &target);
+    void highFivesGuys(void);
 };
 
 #endif
