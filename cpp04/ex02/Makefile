@@ -6,7 +6,7 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/09/23 18:36:15 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/09/24 10:40:31 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,12 @@ NAME = animals
 # Files
 SRCS_DIR = src/
 SRCS =	main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Cat.cpp\
 		Dog.cpp \
-		WrongAnimal.cpp \
+		Brain.cpp \
 		WrongCat.cpp \
+		WrongAnimal.cpp 
 		
 INCS_DIR = inc/
 INCLUDE = -I$(INCS_DIR)
@@ -66,9 +67,9 @@ $(NAME): $(OBJS)
 
 define title
 	@echo 
-	@echo "$(GREEN)*****************************$(RESET)"
-	@echo "$(GREEN)*     $(BOLD) 🤯 Polymorphism  🤯   *$(RESET)"
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)****************************$(RESET)"
+	@echo "$(GREEN)*   $(BOLD)🟣 Abstract class 🟣   *$(RESET)"
+	@echo "$(GREEN)****************************$(RESET)"
 endef
 
 clean:

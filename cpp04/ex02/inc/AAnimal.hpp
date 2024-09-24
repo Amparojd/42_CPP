@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:31:46 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/23 18:53:56 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:38:43 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <string>
 #include <iostream>
@@ -28,16 +28,16 @@
 #define ITALIC      "\033[3m"
 
 
-class Animal {
+class AAnimal {
 protected:
     std::string type;
 public:
-    Animal();
-    Animal(const Animal &other);
-    Animal &operator=(const Animal &other);
-    virtual ~Animal();
+    AAnimal();
+    AAnimal(const AAnimal &other);
+    AAnimal &operator=(const AAnimal &other);
+    virtual ~AAnimal();
 
-    virtual void makeSound() const;
+    virtual void makeSound() const = 0;
     std::string getType() const;
 };
 

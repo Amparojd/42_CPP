@@ -6,21 +6,21 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/09/23 18:36:15 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/09/24 12:09:14 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Program Name
-NAME = animals
+NAME = materia
 
 # Files
 SRCS_DIR = src/
 SRCS =	main.cpp \
-		Animal.cpp \
-		Cat.cpp\
-		Dog.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
+		AMateria.cpp \
+		Character.cpp\
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp 
 		
 INCS_DIR = inc/
 INCLUDE = -I$(INCS_DIR)
@@ -29,7 +29,7 @@ DEPS = $(INCS_DIR)/
 
 # Compilation Settings
 CC		= c++
-FLAGS = -std=c++98 -Wall -Wextra -Werror $(INCLUDE) -g -fsanitize=address
+FLAGS = -std=c++98 -Wall -Wextra -Werror $(INCLUDE) -g -fsanitize=address -Wshadow
 
 # Utils
 RM		= rm -rf
@@ -66,9 +66,9 @@ $(NAME): $(OBJS)
 
 define title
 	@echo 
-	@echo "$(GREEN)*****************************$(RESET)"
-	@echo "$(GREEN)*     $(BOLD) 🤯 Polymorphism  🤯   *$(RESET)"
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)****************************$(RESET)"
+	@echo "$(GREEN)*   $(BOLD)🤓 Interface & recap 🤓  *$(RESET)"
+	@echo "$(GREEN)****************************$(RESET)"
 endef
 
 clean:

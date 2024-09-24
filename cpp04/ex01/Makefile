@@ -6,7 +6,7 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/09/15 12:42:09 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/09/24 08:49:01 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRCS =	main.cpp \
 		Animal.cpp \
 		Cat.cpp\
 		Dog.cpp \
-		Brain.cpp
+		Brain.cpp \
+		WrongCat.cpp \
+		WrongAnimal.cpp 
 		
 INCS_DIR = inc/
 INCLUDE = -I$(INCS_DIR)
@@ -65,9 +67,9 @@ $(NAME): $(OBJS)
 
 define title
 	@echo 
-	@echo "$(GREEN)*****************************$(RESET)"
-	@echo "$(GREEN)*     $(BOLD) Serena, my love!     *$(RESET)"
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)**************************************************$(RESET)"
+	@echo "$(GREEN)* $(BOLD) 😅 I don’t want to set the world on fire 😅   *$(RESET)"
+	@echo "$(GREEN)**************************************************$(RESET)"
 endef
 
 clean:

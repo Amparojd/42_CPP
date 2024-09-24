@@ -6,18 +6,18 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:35:03 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 22:23:20 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:40:46 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main() {
     std::cout << GRAY << BOLD << ITALIC << "**** TEST 1: Creating and using Animal, Dog, and Cat objects ****\n" << RESET << std::endl;
 
-    Animal *animals[6];
+    AAnimal *animals[6];
     for(int i = 0; i < 3; ++i) {
         animals[i] = new Dog();
         std::cout << std::endl;
@@ -43,9 +43,9 @@ int main() {
     ////////////////////////////////////////////////////////////////////////////
     std::cout << GRAY << ITALIC << "**** TEST 2: Copy constructor and assignment operator ****" << RESET << std::endl;
 
-    Dog basic;
+    Cat basic;
     {
-        Dog tmp = basic; // This should invoke the copy constructor
+        Cat tmp = basic; // This should invoke the copy constructor
         std::cout << "After copying, tmp's type: " << tmp.getType() << std::endl;
         tmp.makeSound();
         tmp.showIdeas();
@@ -70,7 +70,7 @@ int main() {
     std::cout << GRAY << BOLD << ITALIC << "**** TEST 4: Creating and using Cat objects with copy ****\n" << RESET << std::endl;
 
     Cat originalCat;
-    std::cout << "Original Dog's ideas:" << std::endl;
+    std::cout << "Original Cat's ideas:" << std::endl;
     originalCat.showIdeas();
 
     // Hacemos una copia profunda de 'originalCat'
@@ -97,8 +97,9 @@ int main() {
     return 0;
 }
 
+
 /*int main() {
-    std::cout << GRAY << BOLD << ITALIC << "**** TEST 1: Animal is not class abstract ****\n" << RESET << std::endl;
+    std::cout << GRAY << BOLD << ITALIC << "**** TEST 1: Creating an Animal object ****\n" << RESET << std::endl;
 
     Animal* animal = new Animal();
     std::cout << "Animal created successfully." << std::endl;
@@ -107,3 +108,4 @@ int main() {
 
     return 0;
 }*/
+

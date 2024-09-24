@@ -6,13 +6,12 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:32:29 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 22:24:36 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:43:16 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-//Dog::Dog() {}
 
 Dog::Dog() {
     type = "Dog";
@@ -20,14 +19,14 @@ Dog::Dog() {
     std::cout << CYAN << " Dog created." << RESET << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog &other) : AAnimal(other) {
     brain = new Brain(*other.brain);
     std::cout << CYAN << "Dog copied.(copy constructor)" << RESET << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other) {
     if (this != &other) {
-        Animal::operator=(other);
+        AAnimal::operator=(other);
         delete brain;
         brain = new Brain(*other.brain);
     }
@@ -47,7 +46,7 @@ void Dog::makeSound() const {
 //new
 void Dog::showIdeas() const {
     for (int i = 0; i < 10; ++i) { // Muestra las primeras 10 ideas
-        std::cout << "Dog's idea at index " << i << ": " << brain->getIdea(i) << std::endl;
+        std::cout << "Cat's idea at index " << i << ": " << brain->getIdea(i) << std::endl;
     }
 }
 

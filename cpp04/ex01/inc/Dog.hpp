@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:32:14 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:41:14 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 09:34:19 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@
 
 class Dog : public Animal {
 private:
-    Brain* brain;
-
+    Brain *brain;
 public:
     Dog();
     Dog(const Dog &other);
+    Dog &operator=(const Dog &other);
     virtual ~Dog();
 
-    Dog& operator=(const Dog &other);
-    virtual void makeSound() const;
+    void makeSound() const;
+    void showIdeas() const;
+    void setIdea(int index, const std::string &idea);
 };
 
-#endif // DOG_HPP
+#endif

@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:35:03 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:35:05 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:01:41 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,69 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main() {
-    // Test with Animal, Dog, and Cat
-    std::cout << "Creating Animal, Dog, and Cat objects:" << std::endl;
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+/*int main()
+{
+const Animal* meta = new Animal();
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+std::cout << j->getType() << " " << std::endl;
+std::cout << i->getType() << " " << std::endl;
+i->makeSound(); //will output the cat sound!
+j->makeSound();
+meta->makeSound();
 
-    std::cout << "Type of j: " << j->getType() << std::endl;
-    std::cout << "Type of i: " << i->getType() << std::endl;
+delete meta;
+delete j;
+delete i;
+}*/
 
-    std::cout << "Making sounds:" << std::endl;
-    i->makeSound(); // Should print Cat sound
-    j->makeSound(); // Should print Dog sound
-    meta->makeSound(); // Should print generic animal sound
+int main()
+{
+    std::cout << GRAY << BOLD << ITALIC << "\n** TEST 1: Creating and using Animal, Dog, and Cat objects" << RESET << std::endl;
 
-    delete i;
-    delete j;
+    const Animal *meta = new Animal();
+    const Animal *dog = new Dog();
+    const Animal *cat = new Cat();
+
+    std::cout << GRAY << ITALIC << "\n** Dog Info and Sound **" << RESET << std::endl;
+    std::cout << CYAN << "Object: " << dog->getType() << " " << RESET << std::endl;
+    std::cout << CYAN << "Dog makeSound(): ";
+    dog->makeSound();
+
+    std::cout << GRAY << ITALIC << "\n** Cat Info and Sound **" << RESET << std::endl;
+    std::cout << YELLOW << "Object: " << cat->getType() << " " << std::endl;
+    std::cout << "Cat makeSound(): ";
+    cat->makeSound();
+
+    std::cout << GRAY << ITALIC << "\n** Animal Info and Sound **" << RESET << std::endl;
+    std::cout <<  "Animal makeSound(): ";
+    meta->makeSound();
+
+    std::cout << std::endl;
     delete meta;
+    delete dog;
+    delete cat;
 
-    // Test with WrongAnimal and WrongCat
-    std::cout << "Creating WrongAnimal and WrongCat objects:" << std::endl;
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
+    std::cout << GRAY << BOLD << ITALIC << "\n** TEST 2: Incorrect Polymorphism with WrongAnimal and WrongCat **" << RESET << std::endl;
 
-    std::cout << "Type of wrongCat: " << wrongCat->getType() << std::endl;
+    const WrongAnimal *wrongMeta = new WrongAnimal();
+    const WrongAnimal *wrongCat = new WrongCat();
 
-    std::cout << "Making sounds:" << std::endl;
-    wrongCat->makeSound(); // Should print WrongCat sound
-    wrongMeta->makeSound(); // Should print WrongAnimal sound
 
-    delete wrongCat;
+    std::cout << GRAY << ITALIC << "\n** WrongAnimal Info and Sound **" << RESET << std::endl;
+    std::cout << "Object: " << wrongMeta->getType() << " " << RESET << std::endl;
+    std::cout << "wrongMeta makeSound(): ";
+    wrongMeta->makeSound();
+
+    std::cout << GRAY << ITALIC << "\n** WrongCat Info and Sound **" << RESET << std::endl;
+    std::cout << "Object: " << wrongCat->getType() << " " << std::endl;
+    std::cout << "wrongcat makeSound(): ";
+    wrongCat->makeSound();
+    std::cout << "This is not expected behavior!" << std::endl;
+
+    std::cout << std::endl;
     delete wrongMeta;
+    delete wrongCat;
 
     return 0;
 }

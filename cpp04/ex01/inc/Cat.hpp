@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:32:52 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/09/15 12:41:36 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 09:34:05 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,17 @@
 
 class Cat : public Animal {
 private:
-    Brain* brain;
-
+    Brain *brain;
 public:
     Cat();
     Cat(const Cat &other);
+    Cat &operator=(const Cat &other);
     virtual ~Cat();
 
-    Cat& operator=(const Cat &other);
-    virtual void makeSound() const;
+    void makeSound() const;
+    void showIdeas() const;
+    void setIdea(int index, const std::string &idea);
 };
 
-#endif // CAT_HPP
+#endif
+
