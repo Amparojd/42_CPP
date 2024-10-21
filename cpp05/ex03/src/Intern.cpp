@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:59:20 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/12 16:59:30 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/21 19:55:25 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ AForm* Intern::makeForm(const std::string &formName, const std::string &target) 
         &PresidentialPardonForm::create
     };
 
-    // Buscar el formulario por el nombre
+    // Buscar el formulario por el _name
     for (int i = 0; i < 3; ++i) {
         if (formNames[i] == formName) {
             std::cout << "Intern creates " << formName << std::endl;

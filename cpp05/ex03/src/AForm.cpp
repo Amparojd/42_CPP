@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:29:03 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/13 12:42:59 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/21 19:55:25 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ AForm::AForm(const AForm &other)
 
 AForm &AForm::operator=(const AForm &other) {
     if (this != &other) {
-        // No se debe copiar el nombre porque es constante
+        // No se debe copiar el _name porque es constante
         signed_ = other.signed_;
         // No se deben modificar los grados, porque son constantes
     }
