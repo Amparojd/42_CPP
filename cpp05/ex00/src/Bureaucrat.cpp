@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:48:12 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/13 11:49:59 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:40:19 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 // Constructor
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
+    std::cout << "BUREAUCRAT has been created" << std::endl;
     validateGrade(grade);
     this->grade = grade;
 }
