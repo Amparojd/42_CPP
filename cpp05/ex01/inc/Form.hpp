@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:28:42 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/25 19:34:54 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:57:00 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ private:
     const int         gradeToExecute;
     bool              isSigned;
     void validateGrade(int grade);
+    Form();
 public:
 
     Form(const std::string &_name, int gradeToSign, int gradeToExecute);
     Form(const Form &other);
     Form& operator=(const Form &other);
     ~Form();
+    
     // Excepciones
     class GradeTooHighException : public std::exception {
     public:

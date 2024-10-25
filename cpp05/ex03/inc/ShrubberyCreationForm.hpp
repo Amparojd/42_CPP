@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:42:33 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/12 17:07:50 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:18:09 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "AForm.hpp"
 #include <fstream>
+#include <cstdlib>
 
 class ShrubberyCreationForm : public AForm {
 private:

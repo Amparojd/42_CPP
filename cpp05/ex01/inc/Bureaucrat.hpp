@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:47:45 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/25 19:32:10 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:56:49 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ private:
 
     void validateGrade(int grade);
 
+    Bureaucrat();
 public:
     // Constructor
     Bureaucrat(const std::string &name, int grade);

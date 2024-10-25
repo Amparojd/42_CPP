@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:48:12 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 18:40:19 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:55:06 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,20 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
     this->grade = grade;
 }
 
-// Destructor
+Bureaucrat::Bureaucrat(const Bureaucrat &other)
+    : name(other.name), grade(other.grade) {}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
+    if (this != &other) {
+        grade = other.grade;
+    }
+    return *this;
+}
+
 Bureaucrat::~Bureaucrat() {}
+
+/////////////////////////////////////////
+
 
 // Getter for name
 const std::string& Bureaucrat::getName() const 

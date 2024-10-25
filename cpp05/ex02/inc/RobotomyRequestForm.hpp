@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:49:08 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/25 19:17:03 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 21:02:17 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <iostream>
 
 class RobotomyRequestForm : public AForm {
+private:
+    RobotomyRequestForm();
 public:
     //canonical form
     RobotomyRequestForm(const std::string &target);

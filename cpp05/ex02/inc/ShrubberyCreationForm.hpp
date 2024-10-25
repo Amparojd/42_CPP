@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:42:33 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/25 19:20:52 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 21:02:33 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include <cstdlib>
 
 class ShrubberyCreationForm : public AForm {
+private:
+    ShrubberyCreationForm();
+    
 public:
     //canonical form
     ShrubberyCreationForm(const std::string &target);

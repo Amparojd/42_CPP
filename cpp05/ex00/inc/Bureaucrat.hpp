@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:47:45 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/13 11:40:01 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:54:52 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,26 @@
 class Bureaucrat {
 private:
     const std::string name;
-    int grade;
+    int               grade;
 
     void validateGrade(int grade);
+    Bureaucrat();
+
 public:
+    
+    Bureaucrat(const std::string &name, int grade);
+    ~Bureaucrat();
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat &operator=(const Bureaucrat &other);
+
+    // Getters
+    const std::string& getName() const;
+    int getGrade() const;
+
+    // Member functions to increment and decrement the grade
+    void incrementGrade();
+    void decrementGrade();
+
     // Exception classes
     class GradeTooHighException : public std::exception {
     public:
@@ -53,21 +69,9 @@ public:
         }
     };
 
-    // Constructor and destructor
-    Bureaucrat(const std::string &name, int grade);
-    ~Bureaucrat();
-
-    // Getters
-    const std::string& getName() const;
-    int getGrade() const;
-
-    // Member functions to increment and decrement the grade
-    void incrementGrade();
-    void decrementGrade();
-
 };
 
-// Overloading the insertion operator
+// Imprime el estado del burócrata
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

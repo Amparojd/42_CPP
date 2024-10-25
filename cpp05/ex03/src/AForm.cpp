@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:29:03 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 19:55:25 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:32:19 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,16 @@ AForm::AForm(const AForm &other)
 
 AForm &AForm::operator=(const AForm &other) {
     if (this != &other) {
-        // No se debe copiar el _name porque es constante
         signed_ = other.signed_;
-        // No se deben modificar los grados, porque son constantes
     }
     return *this;
 }
 
 AForm::~AForm() {}
+
+
+/////////////////////////////////////7
+
 
 const std::string &AForm::getName() const {
     return name_;
@@ -59,4 +61,13 @@ void AForm::beSigned(const Bureaucrat &bureaucrat) {
     if (bureaucrat.getGrade() > signGrade_)
         throw GradeTooLowException();
     signed_ = true;
+}
+
+void AForm::checkExecution(const Bureaucrat &executor) const {
+    if (!isSigned()) {
+        throw FormNotSignedException();
+    }
+    if (executor.getGrade() > getExecGrade()) {
+        throw GradeTooLowException();
+    }
 }

@@ -6,7 +6,7 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/10/12 16:54:38 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/10/25 20:13:22 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS_DIR = src/
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
 		AForm.cpp \
+		Intern.cpp \
 		PresidentialPardonForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp
@@ -68,9 +69,9 @@ $(NAME): $(OBJS)
 
 define title
 	@echo 
-	@echo "$(GREEN)*****************************$(RESET)"
-	@echo "$(GREEN)* $(BOLD) Mommy, when I grow up, I want to be a bureaucrat! *$(RESET)"
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)**************************************$(RESET)"
+	@echo "$(GREEN)* $(BOLD) At least this beats coffee-making *$(RESET)"
+	@echo "$(GREEN)**************************************$(RESET)"
 endef
 
 clean:

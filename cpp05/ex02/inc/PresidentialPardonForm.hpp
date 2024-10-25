@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:50:41 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/25 19:14:38 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 21:02:04 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 
 class PresidentialPardonForm : public AForm {
+private:
+    PresidentialPardonForm();
 public:
     //canonical form
     PresidentialPardonForm(const std::string &target);
