@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:43:00 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/12 16:56:23 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:22:11 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,49 @@
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
     : AForm("ShrubberyCreationForm", target, 145, 137) {}
 
+
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
+    : AForm(other) {}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
+    if (this != &other) {
+        AForm::operator=(other);
+    }
+    return *this;
+}
+
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+/////////////////////////////////////////////////////////////////////////////
+
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-    checkExecution(executor);
-    
-    std::ofstream ofs((getTarget() + "_shrubbery").c_str());
-    if (ofs.fail()) {
-        std::cerr << "Error al crear el archivo" << std::endl;
-        return;
+    if (!isSigned()) {
+        throw FormNotSignedException();
     }
-    ofs << "       _-_       " << std::endl;
-    ofs << "    /~~   ~~\\    " << std::endl;
-    ofs << " /~~         ~~\\ " << std::endl;
-    ofs << "{               }" << std::endl;
-    ofs << " \\  _-     -_  / " << std::endl;
-    ofs << "   ~  \\\\ //  ~   " << std::endl;
-    ofs << "_- -   | | _- _  " << std::endl;
-    ofs << "  _ -  | |   -_  " << std::endl;
-    ofs << "       // \\\\     " << std::endl;
-    ofs.close();
+    if (executor.getGrade() > getGradeToExecute()) {
+        throw GradeTooLowException();
+    }
+    
+    checkExecution(executor);
+    system("cat home_shrubbery");
+
+    std::string fileName = getTarget() + "_shrubbery";
+    std::ofstream out(fileName.c_str());
+    if (out.fail()) {
+        std::cerr << "Error creating the file." << std::endl;
+    }
+    
+    out << "       _-_       " << std::endl;
+    out << "    /~~   ~~\\    " << std::endl;
+    out << " /~~         ~~\\ " << std::endl;
+    out << "{               }" << std::endl;
+    out << " \\  _-     -_  / " << std::endl;
+    out << "   ~  \\\\ //  ~   " << std::endl;
+    out << "_- -   | | _- _  " << std::endl;
+    out << "  _ -  | |   -_  " << std::endl;
+    out << "       // \\\\     " << std::endl;
+    
+    out.close();
+
 }

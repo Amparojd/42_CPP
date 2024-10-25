@@ -6,7 +6,7 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/10/12 16:54:38 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/10/25 19:37:56 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,9 +68,9 @@ $(NAME): $(OBJS)
 
 define title
 	@echo 
-	@echo "$(GREEN)*****************************$(RESET)"
-	@echo "$(GREEN)* $(BOLD) Mommy, when I grow up, I want to be a bureaucrat! *$(RESET)"
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)**************************************$(RESET)"
+	@echo "$(GREEN)* $(BOLD) No, you need form 28B, not 28C... *$(RESET)"
+	@echo "$(GREEN)**************************************$(RESET)"
 endef
 
 clean:

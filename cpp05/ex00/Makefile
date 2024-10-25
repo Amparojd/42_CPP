@@ -6,7 +6,7 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/10/12 13:49:34 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/10/23 19:02:08 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,9 +62,9 @@ $(NAME): $(OBJS)
 
 define title
 	@echo 
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)******************************************************$(RESET)"
 	@echo "$(GREEN)* $(BOLD) Mommy, when I grow up, I want to be a bureaucrat! *$(RESET)"
-	@echo "$(GREEN)*****************************$(RESET)"
+	@echo "$(GREEN)******************************************************$(RESET)"
 endef
 
 clean:

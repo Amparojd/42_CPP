@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:47:45 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 19:59:50 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:32:10 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,46 +23,53 @@
 
 class Form;
 
-class Bureaucrat {
+class Bureaucrat
+{
 private:
     const std::string name;
     int grade;
 
     void validateGrade(int grade);
+
 public:
+    // Constructor
+    Bureaucrat(const std::string &name, int grade);
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat& operator=(const Bureaucrat &other);
+    ~Bureaucrat();
+
     // Exception classes
-    class GradeTooHighException : public std::exception {
+    class GradeTooHighException : public std::exception
+    {
     public:
-        virtual const char* what() const throw() {
+        virtual const char *what() const throw()
+        {
             return "Grade is too high!";
         }
     };
 
-    class GradeTooLowException : public std::exception {
+    class GradeTooLowException : public std::exception
+    {
     public:
-        virtual const char* what() const throw() {
+        virtual const char *what() const throw()
+        {
             return "Grade is too low!";
         }
     };
 
-    // Constructor and destructor
-    Bureaucrat(const std::string &name, int grade);
-    ~Bureaucrat();
-
     // Getters
-    const std::string& getName() const;
+    const std::string &getName() const;
     int getGrade() const;
 
     // Member functions to increment and decrement the grade
     void incrementGrade();
     void decrementGrade();
 
-    //new function ex01
+    // new function ex01
     void signForm(Form &form) const;
-
 };
 
 // Overloading the insertion operator
-std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

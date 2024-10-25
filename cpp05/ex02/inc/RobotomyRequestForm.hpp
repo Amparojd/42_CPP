@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:49:08 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/12 16:50:20 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:17:03 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 
 class RobotomyRequestForm : public AForm {
 public:
+    //canonical form
     RobotomyRequestForm(const std::string &target);
+    RobotomyRequestForm(const RobotomyRequestForm &other);
+    RobotomyRequestForm& operator=(const RobotomyRequestForm &other);
     virtual ~RobotomyRequestForm();
 
     virtual void execute(Bureaucrat const &executor) const;

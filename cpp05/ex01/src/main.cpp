@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:34:31 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 19:27:47 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:15:27 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main() {
     try {
         Bureaucrat juan("Juan", 55);
         std::cout << juan << std::endl;
+        std::cout << std::endl;
 
         Form taxForm("Tax Form 1", 50, 30);
         std::cout << taxForm << std::endl;

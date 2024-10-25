@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:39:00 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 19:14:40 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:03:31 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main() {
     try
     {
         Bureaucrat highBureaucrat("Javi", 1);
-        std::cout << highBureaucrat << " e intenamos incrementar su grado..." << std::endl;
+        std::cout << highBureaucrat << std::endl;
         highBureaucrat.incrementGrade();
     }
     catch(const std::exception& e)
@@ -56,7 +56,7 @@ int main() {
 
     }
     std::cout << std::endl;
-    std::cout << "======= Test excpecion 2 =======" << std::endl;
+    std::cout << "======= Test exception 2 =======" << std::endl;
 
     try {
         Bureaucrat lowBureaucrat("Paco", 145);

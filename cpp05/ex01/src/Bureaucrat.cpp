@@ -6,28 +6,37 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:48:12 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 19:59:36 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:24:19 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/Form.hpp"
 
-// Constructor
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
     validateGrade(grade);
     this->grade = grade;
 }
 
-// Destructor
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade) {}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other) {
+    if (this != &other) {
+        grade = other.grade;
+    }
+    return *this;
+}
+
 Bureaucrat::~Bureaucrat() {}
+
+////////////////////////////////////////////////////////////////////////////////////////
 
 void Bureaucrat::signForm(Form &form) const {
     try {
         form.beSigned(*this);
-        std::cout << name << " firmó " << form.getNombre() << std::endl;
+        std::cout << name << " signed " << form.getNombre() << std::endl;
     } catch (std::exception &e) {
-        std::cout << name << " no pudo firmar " << form.getNombre() << " porque " << e.what() << std::endl;
+        std::cout << name << " could not sign " << form.getNombre() << " because " << e.what() << std::endl;
     }
 }
 

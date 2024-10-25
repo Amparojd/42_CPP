@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:47:45 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/12 16:51:48 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:12:05 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,22 @@
 class AForm;
 
 class Bureaucrat {
+private:
+    const std::string name;
+    int               grade;
+    
+    void validateGrade(int grade);
+    Bureaucrat();
+  
 public:
+
+    // Canonical form
+    Bureaucrat(const std::string &name, int grade);
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat& operator=(const Bureaucrat &other);
+    ~Bureaucrat();
+    
+    //excepciones
     class GradeTooHighException : public std::exception {
     public:
         virtual const char* what() const throw();
@@ -31,22 +46,16 @@ public:
         virtual const char* what() const throw();
     };
 
-    Bureaucrat(const std::string &name, int grade);
-    ~Bureaucrat();
-
+    //getters
     const std::string& getName() const;
     int getGrade() const;
 
+    //increment and decrement grade
     void incrementGrade();
     void decrementGrade();
 
     void signForm(AForm &form) const;
     void executeForm(AForm const &form) const;
-
-private:
-    const std::string name;
-    int grade;
-    void validateGrade(int grade);
 };
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat);

@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:42:33 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/12 16:48:15 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:20:52 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 
 #include "AForm.hpp"
 #include <fstream>
+#include <cstdlib>
 
 class ShrubberyCreationForm : public AForm {
 public:
+    //canonical form
     ShrubberyCreationForm(const std::string &target);
+    ShrubberyCreationForm(const ShrubberyCreationForm &other);
+    ShrubberyCreationForm& operator=(const ShrubberyCreationForm &other);
     virtual ~ShrubberyCreationForm();
+
 
     virtual void execute(Bureaucrat const &executor) const;
 };

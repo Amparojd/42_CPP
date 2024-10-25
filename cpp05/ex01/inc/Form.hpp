@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:28:42 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/21 19:59:45 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:34:54 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,32 @@ class Bureaucrat;
 
 class Form {
 private:
-    const std::string nombre;
-    bool isSigned;
-    const int gradeToSign;
-    const int gradeToExecute;
-
-    void validarGrado(int grade);
+    const std::string _name;
+    const int         gradeToSign;
+    const int         gradeToExecute;
+    bool              isSigned;
+    void validateGrade(int grade);
 public:
+
+    Form(const std::string &_name, int gradeToSign, int gradeToExecute);
+    Form(const Form &other);
+    Form& operator=(const Form &other);
+    ~Form();
     // Excepciones
     class GradeTooHighException : public std::exception {
     public:
         virtual const char* what() const throw() {
-            return "¡El grado es demasiado alto!";
+            return "Grade is too high!";
         }
     };
 
     class GradeTooLowException : public std::exception {
     public:
         virtual const char* what() const throw() {
-            return "¡El grado es demasiado bajo!";
+            return "Grade is too low!";
         }
     };
 
-    // Constructor y destructor
-    Form(const std::string &nombre, int gradeToSign, int gradeToExecute);
-    ~Form();
 
     // Getters
     const std::string& getNombre() const;
