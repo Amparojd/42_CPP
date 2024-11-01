@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 18:56:04 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/10/28 19:15:00 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/11/01 19:29:56 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ class Array {
     }
 
     // Operador de subíndice
-    T& operator[](unsigned int index) {
-        if (index >= _size) {
+    T& operator[](unsigned int index) const 
+    {
+        if (index >= _size) 
+        {
             throw std::out_of_range("Index out of bounds");
         }
         return _array[index];
