@@ -6,15 +6,13 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:39:07 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/11/04 19:49:03 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:55:54 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "../inc/MutantStack.hpp"
 
-#include <iostream>
-#include "../inc/MutantStack.hpp"
 
 // Función para imprimir el contenido de MutantStack
 template <typename T>
