@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:38:44 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/11/03 18:54:06 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:39:46 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ public:
         
     // Tipo de iterador
     typedef typename std::stack<T>::container_type::iterator iterator;
+    typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+
 
     // Funciones miembro
     void push(const T &value) {
@@ -64,12 +66,21 @@ public:
         return std::stack<T>::empty();
     }
 
-    // Funciones para iteradores
+        // Funciones para iteradores
     iterator begin() {
-        return std::stack<T>::c.begin();
+        return this->c.begin();
     }
 
     iterator end() {
+        return this->c.end();
+    }
+
+    // Añadido para soporte de iteradores constantes
+    const_iterator begin() const {
+        return std::stack<T>::c.begin();
+    }
+
+    const_iterator end() const {
         return std::stack<T>::c.end();
     }
 

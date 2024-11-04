@@ -6,7 +6,7 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:34:42 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/11/03 20:46:31 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:25:00 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,16 @@ public:
     
     void    addNumber(int number);
     template <typename Iterator>
-    void    addNumbers(Iterator begin, Iterator end);
+    void addNumbers(Iterator begin, Iterator end) {
+        for (Iterator it = begin; it != end; ++it) {
+            addNumber(*it);
+        }
+    }
     int     shortestSpan() const;
     int     longestSpan() const;
-    
-    // Método para obtener los números
+
     const std::vector<int>& getNumbers() const;
+    
 };
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:35:15 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/11/03 20:46:23 by ampjimen         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:19:28 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Span.hpp"
+#include <iostream>
 
 Span::Span(unsigned int N) : maxSize(N)
 {
@@ -36,6 +37,10 @@ Span::~Span() {}
 
 /////////////////////////////////////////
 
+const std::vector<int>& Span::getNumbers() const {
+    return numbers;
+}
+
 // Añadir un solo número
 void Span::addNumber(int number) {
     if (numbers.size() >= maxSize) {
@@ -44,13 +49,6 @@ void Span::addNumber(int number) {
     numbers.push_back(number);
 }
 
-// Añadir múltiples números usando iteradores
-template <typename Iterator>
-void Span::addNumbers(Iterator begin, Iterator end) {
-    for (Iterator it = begin; it != end; ++it) {
-        addNumber(*it);
-    }
-}
 
 // Calcular el span más corto
 int Span::shortestSpan() const {
@@ -80,9 +78,4 @@ int Span::longestSpan() const {
     int min = *std::min_element(numbers.begin(), numbers.end());
     int max = *std::max_element(numbers.begin(), numbers.end());
     return max - min;
-}
-
-
-const std::vector<int>& Span::getNumbers() const {
-    return numbers;
 }
