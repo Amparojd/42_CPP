@@ -6,12 +6,12 @@
 #    By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/01 13:28:38 by ampjimen          #+#    #+#              #
-#    Updated: 2024/11/04 21:01:23 by ampjimen         ###   ########.fr        #
+#    Updated: 2024/11/18 20:27:08 by ampjimen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Program Name
-NAME = pmerge
+NAME = PmergeMe
 
 # Files
 SRCS_DIR = src/
